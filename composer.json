@@ -1,0 +1,13 @@
+{
+    "name": "dps-software-srl/php-smarty-lib",
+    "autoload": {
+        "psr-4": {
+            "Dps\\": "src/"
+        }
+    },
+    "require" : {
+        "smarty/smarty": "^4.3",
+        "kint-php/kint": "^5.0",
+        "cekurte/environment": "^0.3.0"
+    }
+}
