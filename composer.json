@@ -1,5 +1,7 @@
 {
     "name": "dps-software-srl/php-smarty-lib",
+    "description": "Smarty adapter",
+    "license": "proprietary",    
     "autoload": {
         "psr-4": {
             "Dps\\": "src/"
