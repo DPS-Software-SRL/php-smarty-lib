@@ -1,0 +1,15 @@
+{
+    "function": [
+
+    ],
+    "block": [
+
+    ],
+    "compiler": [
+
+    ],
+    "modifier": [
+        "is_numeric",
+        "strstr"
+    ]
+}
