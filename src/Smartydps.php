@@ -23,6 +23,8 @@ class Smartydps extends Smarty {
     public function __construct() {
         parent::__construct();
 
+        $this->error_reporting = E_ALL ^ E_NOTICE ^ E_WARNING;
+
         // incluye a todos los archivos encontrados en la carpeta plugins
         foreach( glob( __DIR__ . "/plugins/function.*.php" ) as $filePlugin ) {
             require $filePlugin;
