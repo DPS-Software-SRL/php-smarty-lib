@@ -20,7 +20,11 @@ class Smartydps extends Smarty {
     private $tplGrilla    = 'abm.tpl';
     private $tplContenido = 'contenido.tpl';
 
-    public function __construct() {
+    /**
+     * Instancia de Smarty
+     * @param string $registerPluginsData Array con los plugins a registrar. Similar al contenido de registrar.json de esta libreria
+     */
+    public function __construct( array $registerPluginsData = []) {
         parent::__construct();
 
         $this->error_reporting = E_ALL ^ E_NOTICE ^ E_WARNING;
@@ -34,14 +38,22 @@ class Smartydps extends Smarty {
         $this->setCompileDir( '/tmp' );
 
         // Registrar plugins declarados en registrar.json
-        $json = json_decode( file_get_contents( __DIR__ . "/registrar.json" ) );
+        $this->registrarPlugins( json_decode( file_get_contents( __DIR__ . "/registrar.json" ) ) );                
+        
+        // Registrar plugins pasados por parametro
+        $this->registrarPlugins( $registerPluginsData );
+
+    }
+
+    
+    private function registrarPlugins( $json ) {
         foreach( $json as $tipo => $valores ) {
             foreach( $valores as $valor ) {
                 $this->registerPlugin( $tipo, $valor, $valor );
             }
         }
-                
     }
+
 
     public function mostrar( $template ) {
         // Mostrar un DEBUG al pie si está configurado
