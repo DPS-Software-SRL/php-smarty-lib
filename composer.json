@@ -9,7 +9,7 @@
     },
     "require" : {
         "smarty/smarty": "^4.3",
-        "kint-php/kint": "^5.0",
+        "kint-php/kint": "^6.0",
         "cekurte/environment": "^0.3.0"
     }
 }
