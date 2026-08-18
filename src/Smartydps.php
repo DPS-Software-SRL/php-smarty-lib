@@ -22,7 +22,7 @@ class Smartydps extends Smarty {
 
     /**
      * Instancia de Smarty
-     * @param string $registerPluginsData Array con los plugins a registrar. Similar al contenido de registrar.json de esta libreria
+     * @param array $registerPluginsData Array con los plugins a registrar. Similar al contenido de registrar.json de esta libreria
      */
     public function __construct( array $registerPluginsData = []) {
         parent::__construct();
